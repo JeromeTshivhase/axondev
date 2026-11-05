@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<title>AxonDev · Software studio in Gauteng</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="canonical" href="https://axondev.co.za/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://axondev.co.za/">
+<meta property="og:title" content="AxonDev · Software studio, Gauteng">
+<meta property="og:description" content="WhatsApp-first products, payment flows and Spring Boot backends for South African businesses.">
+<meta name="theme-color" content="#F1F2EF">
+
+<meta name="description" content="AxonDev is a Gauteng software studio building WhatsApp-first products, payment flows and Spring Boot backends for South African businesses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one long ruled sheet; a single "axon" signal line runs down the left margin and branches into each section. */
+:root{
+  --bg:#F1F2EF; --surface:#E6E8E3; --ink:#15191C; --muted:#5A615F; --rule:#C9CDC6;
+  --signal:#C2521F; --signal-soft:#F2D9CB; --node:#1E3A5F;
+  --ok:#2F6B47; --ok-soft:#D6E8DC; --build:#8A6A12; --build-soft:#F0E5C4;
+  --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#121517; --surface:#1B2023; --ink:#E9ECE8; --muted:#9AA29F; --rule:#2D3437;
+  --signal:#EA7A44; --signal-soft:#3A2418; --node:#8FB4E0;
+  --ok:#7CC496; --ok-soft:#1C3326; --build:#E2C062; --build-soft:#33290F; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121517; --surface:#1B2023; --ink:#E9ECE8; --muted:#9AA29F; --rule:#2D3437;
+  --signal:#EA7A44; --signal-soft:#3A2418; --node:#8FB4E0;
+  --ok:#7CC496; --ok-soft:#1C3326; --build:#E2C062; --build-soft:#33290F; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+
+body{background:var(--bg);color:var(--ink);font:400 1rem/1.6 var(--f-body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.label{font:500 .75rem/1.2 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0}
+
+/* header */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 1.15rem/1 var(--f-display);font-stretch:125%;letter-spacing:-.01em}
+.mark svg{flex:none}
+nav{display:flex;gap:22px;font:500 .9rem var(--f-body)}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:999px;background:var(--ink);color:var(--bg);text-decoration:none;font:600 .92rem var(--f-body);border:0;cursor:pointer}
+.btn:hover{background:var(--signal);color:#fff}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--rule)}
+.btn.ghost:hover{box-shadow:inset 0 0 0 1px var(--ink);background:transparent;color:var(--ink)}
+@media (max-width:720px){nav{display:none}}
+
+/* hero */
+.hero{padding-block:72px 56px;display:grid;gap:48px}
+.hero h1{font-weight:850;font-stretch:118%;font-size:clamp(2.5rem,6.4vw,5.1rem);line-height:.98;letter-spacing:-.025em;max-width:15ch}
+.hero h1 em{font-style:normal;color:var(--signal)}
+.hero p.lede{font-size:1.18rem;color:var(--muted);max-width:56ch;margin:22px 0 0}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+
+/* trace */
+.trace{border:1px solid var(--rule);border-radius:14px;background:var(--surface);padding:22px clamp(16px,3vw,28px) 18px}
+.trace-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+.trace-head .ms{font:500 .75rem var(--f-mono);color:var(--ok)}
+.hops{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.hops::before{content:"";position:absolute;left:10%;right:10%;top:15px;height:2px;background:var(--rule)}
+.pulse{position:absolute;top:11px;left:10%;width:10px;height:10px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 6px color-mix(in srgb,var(--signal) 22%,transparent);animation:travel 4.2s cubic-bezier(.6,0,.3,1) infinite}
+@keyframes travel{0%{left:10%;opacity:0}6%{opacity:1}88%{opacity:1}100%{left:calc(90% - 10px);opacity:0}}
+.hop{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;min-width:0}
+.dot{width:32px;height:32px;border-radius:50%;background:var(--bg);border:2px solid var(--node);display:grid;place-items:center;font:600 .7rem var(--f-mono);color:var(--node)}
+.hop b{font:600 .86rem var(--f-body)}
+.hop small{font:400 .72rem/1.35 var(--f-mono);color:var(--muted);overflow-wrap:anywhere}
+.trace-foot{margin-top:18px;padding-top:14px;border-top:1px dashed var(--rule);font:400 .78rem var(--f-mono);color:var(--muted)}
+@media (max-width:640px){
+  .hops{grid-template-columns:1fr;gap:14px}
+  .hops::before{left:15px;right:auto;top:16px;bottom:16px;width:2px;height:auto}
+  .pulse{left:11px;top:16px;animation-name:travelv}
+  .hop{flex-direction:row;text-align:left;align-items:center}
+  .hop .txt{display:flex;flex-direction:column}
+  .dot{flex:none}
+}
+@keyframes travelv{0%{top:16px;opacity:0}6%{opacity:1}88%{opacity:1}100%{top:calc(100% - 26px);opacity:0}}
+
+/* sections */
+section.block{border-top:1px solid var(--rule);padding-block:64px}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:24px 48px;align-items:end;margin-bottom:40px}
+.sec-head h2{font-weight:800;font-stretch:112%;font-size:clamp(1.8rem,3.6vw,2.7rem);line-height:1.05;letter-spacing:-.02em}
+.sec-head p{margin:0;color:var(--muted);max-width:58ch}
+@media (max-width:820px){.sec-head{grid-template-columns:1fr}}
+
+/* services list */
+.svc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px}
+.svc article{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 18px;padding-block:24px;border-top:1px solid var(--rule)}
+.svc .tick{grid-row:span 3;width:12px;height:12px;margin-top:9px;border-radius:50%;border:2px solid var(--signal)}
+.svc h3{font-weight:700;font-stretch:105%;font-size:1.3rem;letter-spacing:-.01em}
+.svc p{margin:4px 0 6px;color:var(--muted)}
+.svc .uses{font:400 .78rem/1.5 var(--f-mono);color:var(--node)}
+@media (max-width:760px){.svc{grid-template-columns:1fr}}
+
+/* work */
+.work{display:grid;gap:18px}
+.case{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:28px 40px;padding:28px clamp(18px,3vw,32px);border:1px solid var(--rule);border-radius:14px;background:var(--surface)}
+.case h3{font-weight:800;font-stretch:115%;font-size:clamp(1.5rem,2.8vw,2rem);letter-spacing:-.02em;line-height:1.05}
+.case .what{margin:10px 0 0;color:var(--muted)}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:4px 10px;border-radius:999px;font:500 .72rem var(--f-mono);letter-spacing:.04em;text-transform:uppercase;margin-bottom:14px}
+.chip::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.chip.live{background:var(--ok-soft);color:var(--ok)}
+.chip.built{background:var(--signal-soft);color:var(--signal)}
+.chip.dev{background:var(--build-soft);color:var(--build)}
+.case ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.case li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;font-size:.95rem}
+.case li::before{content:"";width:14px;height:2px;background:var(--signal);margin-top:12px}
+.case .stack{margin-top:16px;font:400 .76rem/1.6 var(--f-mono);color:var(--muted)}
+@media (max-width:820px){.case{grid-template-columns:1fr}}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;counter-reset:s}
+.step{padding:0 24px 0 0;position:relative}
+.step .n{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.step .n span{font:600 .8rem var(--f-mono);color:var(--signal)}
+.step .n i{flex:1;height:1px;background:var(--rule)}
+.step h3{font-weight:700;font-size:1.15rem;margin-bottom:8px}
+.step p{margin:0;color:var(--muted);font-size:.95rem}
+@media (max-width:860px){.steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 0}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* stack strip */
+.stackstrip{display:flex;flex-wrap:wrap;gap:8px}
+.stackstrip span{padding:7px 12px;border:1px solid var(--rule);border-radius:999px;font:500 .82rem var(--f-mono);color:var(--ink)}
+
+/* contact */
+.contact{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;align-items:start}
+.contact h2{font-weight:850;font-stretch:118%;font-size:clamp(2rem,4.6vw,3.4rem);line-height:1;letter-spacing:-.025em}
+.contact .lede{color:var(--muted);margin:18px 0 26px;max-width:48ch}
+.mail{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.mail code{font:500 1.05rem var(--f-mono);padding:11px 14px;border-radius:10px;background:var(--surface);border:1px solid var(--rule);user-select:all}
+.toast{font:400 .8rem var(--f-mono);color:var(--ok);min-height:1.2em;margin-top:8px}
+.brief{border:1px solid var(--rule);border-radius:14px;padding:24px}
+.brief ol{margin:14px 0 0;padding-left:1.2em;display:grid;gap:10px;color:var(--muted)}
+.brief ol li::marker{font-family:var(--f-mono);color:var(--signal)}
+@media (max-width:820px){.contact{grid-template-columns:1fr}}
+
+footer{border-top:1px solid var(--rule);padding-block:28px 40px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font:400 .8rem var(--f-mono);color:var(--muted)}
+
+@media (prefers-reduced-motion:reduce){.pulse{animation:none;opacity:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="mark" href="#top" aria-label="AxonDev home">
+      <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><circle cx="6" cy="13" r="4.5" fill="none" stroke="var(--node)" stroke-width="2.2"/><path d="M10.5 13H20" stroke="var(--signal)" stroke-width="2.2" stroke-linecap="round"/><path d="M20 13l3-5M20 13l3 5" stroke="var(--signal)" stroke-width="2.2" stroke-linecap="round"/></svg>
+      AxonDev
+    </a>
+    <nav aria-label="Primary">
+      <a href="#services">Services</a><a href="#work">Work</a><a href="#process">Process</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="btn" href="#contact">Start a project</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div>
+      <p class="label">Software studio · Gauteng, South Africa</p>
+      <h1>Backends that hold up when <em>the money moves.</em></h1>
+      <p class="lede">AxonDev builds WhatsApp-first products, payment flows and Spring Boot APIs for South African businesses. We ship working software in small, reviewable steps, and we hand it over with the docs to keep it running.</p>
+      <div class="cta">
+        <a class="btn" href="#contact">Book a scoping call</a>
+        <a class="btn ghost" href="#work">See what we've built</a>
+      </div>
+    </div>
+
+    <figure class="trace" aria-label="Example request path: a WhatsApp booking flows through the API to Paystack and settles to the merchant">
+      <div class="trace-head">
+        <span class="label">Trace · booking deposit</span>
+        <span class="ms">200 OK · idempotent · settled</span>
+      </div>
+      <div class="hops">
+        <div class="pulse" aria-hidden="true"></div>
+        <div class="hop"><div class="dot">01</div><div class="txt"><b>WhatsApp</b><small>client picks a slot</small></div></div>
+        <div class="hop"><div class="dot">02</div><div class="txt"><b>API</b><small>Spring Boot validates booking</small></div></div>
+        <div class="hop"><div class="dot">03</div><div class="txt"><b>Paystack</b><small>deposit charged in ZAR</small></div></div>
+        <div class="hop"><div class="dot">04</div><div class="txt"><b>Webhook</b><small>verified, deduplicated</small></div></div>
+        <div class="hop"><div class="dot">05</div><div class="txt"><b>Payout</b><small>subaccount settles to merchant</small></div></div>
+      </div>
+      <figcaption class="trace-foot">The path a real NailDesk booking takes. This is the kind of system we build.</figcaption>
+    </figure>
+  </div>
+
+  <section class="block" id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>What we build</h2>
+        <p>We focus on the parts of a product where mistakes cost money: payments, messaging and the backend that ties them together. Each engagement is scoped in writing before any code is written.</p>
+      </div>
+      <div class="svc">
+        <article><span class="tick"></span><h3>WhatsApp-first products</h3><p>Booking bots, order flows and notifications on the WhatsApp Business Cloud API, including templates, Flows and number migration.</p><span class="uses">Meta Cloud API · Flows · OTP templates</span></article>
+        <article><span class="tick"></span><h3>Payments and payouts</h3><p>Deposits, split payments, escrow and payouts that reconcile. Funds route through the gateway, so you stay clear of holding client money.</p><span class="uses">Paystack subaccounts · PayFast · webhooks</span></article>
+        <article><span class="tick"></span><h3>Backends and APIs</h3><p>Java and Spring Boot services on Postgres, with auth, rate limiting, encrypted sensitive fields and a schema you can grow into.</p><span class="uses">Java 17 · Spring Boot 3 · Postgres · Redis</span></article>
+        <article><span class="tick"></span><h3>Deploy and rescue</h3><p>Broken deploys, failing health checks, leaked secrets, email that won't send. We get existing apps stable, then write the runbook.</p><span class="uses">Railway · Render · Supabase · Cloudflare</span></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Work</h2>
+        <p>Products we've designed, built and run ourselves. Each status is current: we only call something live when real people are using it.</p>
+      </div>
+      <div class="work">
+        <article class="case">
+          <div>
+            <span class="chip live">Live · beta</span>
+            <h3>NailDesk</h3>
+            <p class="what">Booking and deposit platform for independent nail technicians. Clients book over WhatsApp, pay a deposit, and the tech gets paid out without chasing anyone.</p>
+            <p class="stack">React · Spring Boot · Supabase · Paystack · WhatsApp Cloud API · Cloudflare Workers</p>
+          </div>
+          <ul>
+            <li>WhatsApp booking flow with deposit links and reminders</li>
+            <li>Per-tech Paystack subaccounts, with true net earnings after fees</li>
+            <li>Bank details verified through Paystack and encrypted with AES-256-GCM</li>
+            <li>Public portfolio pages with custom booking links and search previews</li>
+          </ul>
+        </article>
+        <article class="case">
+          <div>
+            <span class="chip built">Built · pre-launch</span>
+            <h3>Handshake</h3>
+            <p class="what">Peer-to-peer marketplace with escrow. Buyer funds are held until both sides confirm the meetup with a one-time code.</p>
+            <p class="stack">Spring Boot · React · Postgres · Redis · PayFast · Brevo</p>
+          </div>
+          <ul>
+            <li>Escrow lifecycle with OTP meetup verification</li>
+            <li>JWT auth, optional two-factor login and Redis-backed rate limiting</li>
+            <li>Real-time chat with read receipts</li>
+            <li>Meetup map ranking safe spots by road distance and travel time</li>
+          </ul>
+        </article>
+        <article class="case">
+          <div>
+            <span class="chip dev">In development</span>
+            <h3>KayaPay</h3>
+            <p class="what">Rent collection for small landlords and estates: track who owes what, send reminders and collect without manual reconciliation.</p>
+            <p class="stack">Spring Boot · Postgres · payment gateway integration</p>
+          </div>
+          <ul>
+            <li>Tenants, units and monthly rent ledger</li>
+            <li>Automated reminders before and after due dates</li>
+            <li>Payment matching so landlords stop checking bank statements by hand</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="process">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>How a project runs</h2>
+        <p>You see progress every week and nothing goes to production without your approval.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="n"><span>01</span><i></i></div><h3>Scoping call</h3><p>We talk through the problem, your users and what already exists. No charge.</p></div>
+        <div class="step"><div class="n"><span>02</span><i></i></div><h3>Written brief</h3><p>A short document with scope, what's out of scope, a fixed quote and the first milestone.</p></div>
+        <div class="step"><div class="n"><span>03</span><i></i></div><h3>Build in small steps</h3><p>Each change arrives as a reviewed pull request with a preview. You say "merge" before it goes live.</p></div>
+        <div class="step"><div class="n"><span>04</span><i></i></div><h3>Launch and hand over</h3><p>Deploy, monitoring and a runbook covering secrets, backups and what to do when something breaks.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="stack-h">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="stack-h">Stack we work in</h2><p>Proven tools that are cheap to host and easy to hire for later.</p></div>
+      <div class="stackstrip">
+        <span>Java 17</span><span>Spring Boot</span><span>React</span><span>Vite</span><span>PostgreSQL</span><span>Supabase</span><span>Redis</span><span>Paystack</span><span>PayFast</span><span>WhatsApp Cloud API</span><span>Docker</span><span>Railway</span><span>Render</span><span>Cloudflare</span><span>GitHub Actions</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="contact">
+    <div class="wrap contact">
+      <div>
+        <p class="label">Contact</p>
+        <h2>Tell us what you're trying to build.</h2>
+        <p class="lede">Email a few lines about the project. We reply within one working day with questions or a time for a scoping call.</p>
+        <div class="mail">
+          <code id="addr">hello@axondev.co.za</code>
+          <button class="btn" id="copy" type="button">Copy email</button>
+        </div>
+        <div class="toast" id="toast" role="status"></div>
+      </div>
+      <div class="brief">
+        <p class="label">Useful to include</p>
+        <ol>
+          <li>What the product does and who uses it</li>
+          <li>Whether something already exists, and where it's hosted</li>
+          <li>Payments or WhatsApp involved?</li>
+          <li>When you need a first version live</li>
+          <li>Rough budget range</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 AxonDev</span><span>Gauteng, South Africa · working remotely across SA</span></div>
+</footer>
+
+<script>
+document.getElementById('copy').addEventListener('click',function(){
+  var t=document.getElementById('addr').textContent,toast=document.getElementById('toast');
+  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('addr'));var s=getSelection();s.removeAllRanges();s.addRange(r);toast.textContent='Selected. Press Ctrl+C or ⌘C to copy.';}
+  try{navigator.clipboard.writeText(t).then(function(){toast.textContent='Copied '+t;},sel);}catch(e){sel();}
+});
+</script>
+</body>
+</html>
