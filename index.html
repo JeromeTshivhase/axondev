@@ -9,10 +9,10 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://axondev.co.za/">
 <meta property="og:title" content="AxonDev · Software studio, Gauteng">
-<meta property="og:description" content="WhatsApp-first products, payment flows and Spring Boot backends for South African businesses.">
+<meta property="og:description" content="WhatsApp-first products, USSD flows, payment flows and Spring Boot backends for South African businesses.">
 <meta name="theme-color" content="#F1F2EF">
 
-<meta name="description" content="AxonDev is a Gauteng software studio building WhatsApp-first products, payment flows and Spring Boot backends for South African businesses.">
+<meta name="description" content="AxonDev is a Gauteng software studio building WhatsApp-first products, USSD flows, payment flows and Spring Boot backends for South African businesses.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -210,6 +210,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       </div>
       <div class="svc">
         <article><span class="tick"></span><h3>WhatsApp-first products</h3><p>Booking bots, order flows and notifications on the WhatsApp Business Cloud API, including templates, Flows and number migration.</p><span class="uses">Meta Cloud API · Flows · OTP templates</span></article>
+        <article><span class="tick"></span><h3>USSD services, self-hosted</h3><p>Menu-driven USSD flows that run on your own servers, so customer data stays with you. Design the flow in a browser, connect your aggregator and go live.</p><span class="uses">Africa's Talking · Hubtel · any aggregator · Docker</span></article>
         <article><span class="tick"></span><h3>Payments and payouts</h3><p>Deposits, split payments, escrow and payouts that reconcile. Funds route through the gateway, so you stay clear of holding client money.</p><span class="uses">Paystack subaccounts · PayFast · webhooks</span></article>
         <article><span class="tick"></span><h3>Backends and APIs</h3><p>Java and Spring Boot services on Postgres, with auth, rate limiting, encrypted sensitive fields and a schema you can grow into.</p><span class="uses">Java 17 · Spring Boot 3 · Postgres · Redis</span></article>
         <article><span class="tick"></span><h3>Deploy and rescue</h3><p>Broken deploys, failing health checks, leaked secrets, email that won't send. We get existing apps stable, then write the runbook.</p><span class="uses">Railway · Render · Supabase · Cloudflare</span></article>
@@ -236,6 +237,20 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
             <li>Per-tech Paystack subaccounts, with true net earnings after fees</li>
             <li>Bank details verified through Paystack and encrypted with AES-256-GCM</li>
             <li>Public portfolio pages with custom booking links and search previews</li>
+          </ul>
+        </article>
+        <article class="case" id="ussd">
+          <div>
+            <span class="chip built">Built · pre-launch</span>
+            <h3>USSD Flow Engine</h3>
+            <p class="what">Build USSD menus in a browser and run them on your own infrastructure. Installed from a private package into your cloud, so session data never passes through ours.</p>
+            <p class="stack">NestJS · MongoDB · Redis · React · Docker · Caddy</p>
+          </div>
+          <ul>
+            <li>Visual flow builder, with the engine answering aggregator requests in the shape each one expects</li>
+            <li>Africa's Talking and Hubtel ready-made; other aggregators set up from Settings with per-aggregator secrets</li>
+            <li>Owner-only controls, two-person approval of changes and an audit history</li>
+            <li>One-command install, HTTPS, backup and restore</li>
           </ul>
         </article>
         <article class="case">
